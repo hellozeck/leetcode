@@ -47,7 +47,32 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int reverse(int x) {
+        if (x == Integer.MAX_VALUE || x == Integer.MIN_VALUE){
+            return  0 ;
+        }
 
+        boolean isNegative = false;
+        long temp = x;
+
+        if (x < 0 ){
+            temp = -x ;
+            isNegative = true;
+        }
+
+
+        long y = 0;
+        while (temp != 0){
+            long r = temp % 10;
+            y = y * 10 + r;
+            temp = temp / 10;
+        }
+        if (y > Integer.MAX_VALUE){
+            return 0;
+        }
+        if (isNegative){
+            y = - y ;
+        }
+        return (int)y;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
