@@ -62,6 +62,16 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
 
+        int n = nums.length;
+        int index = 0;
+        while (index < n){
+            if (nums[index] == val){
+                nums[index] = nums[-- n];
+            }else {
+                index ++;
+            }
+        }
+        return n;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -71,7 +71,6 @@ class Solution
             kNums[i] = i < move ? avg + 1 : avg;
         }
         ListNode[] nodes = new ListNode[k];
-
         int index = 0 ;
         ListNode p = head;
         while (index != k & p != null){
